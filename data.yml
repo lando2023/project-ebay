@@ -1,0 +1,17 @@
+- hosts: databases
+  var:
+|   password: DevOps@2020
+    username: mylandmark
+    hostname: mongo
+  tasks:
+  - name: create username
+    user: "{{username}}"
+    state: present
+  - name: install package
+    package: ['wget', 'unzip']
+    state: latest
+  - name:
+    debug:
+      msg: "{{password}}"
+
+
